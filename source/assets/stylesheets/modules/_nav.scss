@@ -1,0 +1,42 @@
+/* Navigation styling - main and subnavs */
+
+.logo { 
+  float: left;
+  margin-right: 40px;
+  padding: 12px 0;
+  width: 140px;
+  height: 40px;
+}
+
+.nav {
+  list-style:none;
+  margin-left:0;
+  > li {
+    margin-right: 9px;
+    line-height: 40px;
+    @include font-size(18);
+    &:before {
+      display: inline-block;
+      margin-right: 7px;
+      content: "|";
+      color: #ccc;
+      font-family: $font-light;
+      font-weight: normal;
+    }
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+    &,
+    > a {
+        display:inline-block;
+       *display:inline;
+        zoom:1;
+        font-family: $font-semibold;
+        color: $gray-med;
+        @include hoverActiveFocus('color', $brand-color);
+        @include hoverActiveFocus('text-decoration', none);
+    }
+  }
+}

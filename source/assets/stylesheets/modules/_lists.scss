@@ -1,0 +1,22 @@
+/* LISTS 
+---------------------------------------- */
+
+//regular ul, square bullets
+.list-bullets {
+  margin: 0 0 .35em 0;
+}
+
+//for lists with icon bullets (e.g. home page resources)
+.list-bullets--icon {
+  padding-left: 0;
+  list-style-type: none;
+  > li {
+    margin-top: .35em;
+    padding-left: 20px;
+    @include font-size(18);
+    line-height: 1.2;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
