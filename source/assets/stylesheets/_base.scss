@@ -38,6 +38,18 @@ header[role="banner"] {
   @include cf;
 }
 
+.content {
+  @include font-size(17);
+  border: 15px solid $main-background;
+  .home & {
+    border: none;
+  }
+}
+
+.main {
+  padding: 30px 25px;
+}
+
 footer[role="contentinfo"] {
   margin: 20px 0;
   @include cf;
@@ -82,6 +94,11 @@ footer[role="contentinfo"] {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 .5em 0;
   padding: 0;
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.5;
 }
 
 h1,.alpha {

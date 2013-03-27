@@ -40,3 +40,16 @@
     }
   }
 }
+
+.nav--sub {
+  margin: 0;
+  padding: 0 0 0 20px;
+  border-bottom: 1px solid #ddd;
+  > li {
+    line-height: 48px;
+    > a {
+      color: $gray-dark;
+      @include hoverActiveFocus('color', $brand-color-alt);
+    }
+  }
+}

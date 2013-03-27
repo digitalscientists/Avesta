@@ -5,7 +5,6 @@
 
 .hero {
   position: relative;
-  margin-bottom: 25px;
   @include cf;
   .page-title {
     position: absolute;
@@ -13,6 +12,9 @@
     bottom: 55px;
     margin-bottom: 0;
     color: #fff;
+  }
+  .home & {
+    margin-bottom: 25px;
   }
 }
 
