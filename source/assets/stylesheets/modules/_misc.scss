@@ -97,3 +97,47 @@
     }
   }
 }
+
+// News & Events
+
+.news {
+  .media {
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    &:first-child {
+      padding-top: 5px;
+      border: none;
+    }
+  }
+  .news-title {
+    margin-bottom: .25em;
+  }
+}
+
+.events {
+  .media {
+    padding-bottom: 30px;
+    &:first-child {
+      padding-top: 10px;
+      border: none;
+    }
+  }
+  .event-title,
+  .event-summary,
+  .event-date {
+    margin-bottom: .15em;
+  }
+  .event-title {
+    font-family: $font-regular;
+    @include font-size(16);
+    color: $black;
+  }
+  .event-summary {
+    @include font-size(15);
+    color: $gray-dark;
+  }
+  .event-date {
+    @include font-size(15);
+    color: $gray-light;
+  }
+}

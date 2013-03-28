@@ -110,9 +110,14 @@ h1,.alpha {
 h2,.beta {
   @include font-size($h2-size);
   color: $brand-color;
+  .secondary & {
+    padding-bottom: .35em;
+    border-bottom: 1px solid #ddd;
+  }
 }
 h3,.gamma {
   @include font-size($h3-size);
+  color: $gray-darkest;
 }
 h4,.delta {
   @include font-size($h4-size);
