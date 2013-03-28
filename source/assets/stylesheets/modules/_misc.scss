@@ -18,6 +18,8 @@
   }
 }
 
+// Feature blocks - used on home page
+
 .feature-block {
   /* adjust to ensure equal height at wide screen layout */
   padding: 20px 18px;
@@ -72,5 +74,26 @@
     width: 44px;
     height: 25px;
     border-left: 1px solid #ccc;
+  }
+}
+
+// Leadership blocks
+
+.leadership {
+  h2 span {
+    margin-left: .75em;
+    @include font-size(17);
+    color: $gray-light;
+  }
+  .media {
+    padding: 30px 25px;
+    border-top: 1px solid #ddd;
+    &:first-child {
+      padding-top: 5px;
+      border: none;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }

@@ -48,6 +48,9 @@ header[role="banner"] {
 
 .main {
   padding: 30px 25px;
+  &.flush {
+    padding: 30px 0;
+  }
 }
 
 footer[role="contentinfo"] {
@@ -106,6 +109,7 @@ h1,.alpha {
 }
 h2,.beta {
   @include font-size($h2-size);
+  color: $brand-color;
 }
 h3,.gamma {
   @include font-size($h3-size);

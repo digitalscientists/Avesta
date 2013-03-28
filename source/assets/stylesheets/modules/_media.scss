@@ -1,0 +1,44 @@
+/* MEDIA BLOCKS
+
+<div class="media">
+  <img src=http://placehold.it/200x300 alt="" class="media__img">
+  <div class="media__body">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+  </div>
+</div>
+
+---------------------------------------- */
+
+$gutter-img: 1em;
+
+.media {
+  display:block;
+  @include cf;
+}
+
+.media__img{
+  float: left;
+  margin-right: $gutter-img;
+}
+/**
+ * Reversed image location (right instead of left).
+ */
+.media__img--rev {
+  float: right;
+  margin-left: $gutter-img;
+}
+
+.media__img img,
+.media__img--rev img {
+  display: block;
+}
+
+.media__body {
+  overflow: hidden;
+}
+
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0;
+}
