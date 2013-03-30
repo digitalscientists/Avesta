@@ -110,9 +110,11 @@ h1,.alpha {
 h2,.beta {
   @include font-size($h2-size);
   color: $brand-color;
-  .secondary & {
+  .secondary &,
+  &.border {
     padding-bottom: .35em;
     border-bottom: 1px solid #ddd;
+    letter-spacing: -.05em;
   }
 }
 h3,.gamma {
