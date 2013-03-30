@@ -13,6 +13,14 @@
 //RWD defaults
 img, embed, object, video { max-width: 100%; vertical-align: middle; }
 
+iframe {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  border: none;
+  }
+
 /* STRUCTURE 
 ---------------------------------------- */
 
