@@ -11,11 +11,11 @@ body_id: find
 .content.content-bg
   .main.flush role="main"
     .grid
-      .grid__col.one-quarter
+      .grid__col.find-refine
         h3.border Refine your search
         form.refine
           | this is the search form
-      .grid__col.three-quarters
+      .grid__col.find-listings
         .search-results
           h1.beta Apartments in City, State
           .listing.grid
@@ -25,7 +25,7 @@ body_id: find
             .details.grid__col.one-half
               h2.name
                 | Avesta Bella Mar
-                .marker 1
+                .marker 4
               p.contact 
                 | 12406 N. 15th Street, Tampa, FL 33612<br/>(866) 380-0273
               p.description Conveniently located in Tampa, our residents enjoy being within minutes of University Mall, USF, and Busch Gardens.
@@ -47,8 +47,8 @@ body_id: find
               a href="#" View Community
             .details.grid__col.one-half
               h2.name
-                | Avesta Bella Mar
-                .marker 1
+                | Avesta Busch Gardens
+                .marker 12
               p.contact 
                 | 12406 N. 15th Street, Tampa, FL 33612<br/>(866) 380-0273
               p.description Conveniently located in Tampa, our residents enjoy being within minutes of University Mall, USF, and Busch Gardens.
@@ -64,4 +64,10 @@ body_id: find
                   p.pricing-data $475 - $765
                   h4 Bedrooms
                   p.pricing-data 1 - 2    
-      
+          .pagination
+            | MORE RESULTS
+            .pagination__pages
+              a.current href="#" 1
+              a href="#" 2
+              a href="#" 3
+              a.next href="#"
