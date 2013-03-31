@@ -1,4 +1,4 @@
-/* MISCELLANEOUS MODULES - *REORGANIZE*
+/* PAGE SPECIFIC STYLES/MODIFIERS
 ---------------------------------------- */
 
 // Hero/Carousel
@@ -150,7 +150,6 @@
 }
 
 // Find (search results)
-
 .find-refine {
   background: #fff;
   h3 {
@@ -161,34 +160,6 @@
     color: #000;
     letter-spacing: -.08em;
     border-bottom: 1px solid #ddd;
-  }
-}
-
-form {
-  padding: 15px;
-  fieldset {
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-  .field {
-    clear: both;
-    margin-bottom: 15px;
-    width: 100%;
-    &.inline {
-      float: left;
-      clear: none;
-      width: 45%;
-    }
-  }
-  label {
-    display: block;
-    font-family: $font-semibold;
-    @include font-size(15);
-    color: $gray-med;
-  }
-  select {
-    width: 100%;
   }
 }
 

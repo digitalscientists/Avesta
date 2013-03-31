@@ -1,3 +1,79 @@
-/* SEARCH FORMS - MAIN & REFINE 
+/* SEARCH FORMS - FIND APARTMENT, REFINE 
 ---------------------------------------- */
 
+//Find an Apartment Search Form
+.search {
+  position: absolute;
+  z-index: 5;
+  margin: 15px;
+  padding: 30px 25px;
+  background: #fff;
+  @include cf;
+}
+
+//Includes stlye overrides for jQuery Chosen (chosen.css)
+form.find-apartment {
+  label {
+    float: left;
+    margin-right: 20px;
+    @include font-size(25);
+    color: $gray-dark;
+  }
+  .chzn-container {
+    display: block;
+    float: left;
+    @include font-size(17);
+    .search-field input {
+      height: auto ;
+      font-family: $font-regular;
+    }
+    .chzn-choices {
+      background: #e5e5e5;
+    }
+    .chzn-drop {
+      margin-top: 5px;
+      border: 1px solid #ccc;
+    }
+    .group-result {
+      font-family: $font-semibold;
+      @include font-size(18);
+      color: $gray-dark;
+    }
+    .group-option {
+      font-family: $font-regular;
+      color: $gray-darkest;
+      &.highlighted {
+        background: #edf3fc;
+      }
+    }
+  }
+}
+
+// Refine Search Form
+form.refine-search {
+  padding: 15px;
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .field {
+    clear: both;
+    margin-bottom: 15px;
+    width: 100%;
+    &.inline {
+      float: left;
+      clear: none;
+      width: 45%;
+    }
+  }
+  label {
+    display: block;
+    font-family: $font-semibold;
+    @include font-size(15);
+    color: $gray-med;
+  }
+  select {
+    width: 100%;
+  }
+}
