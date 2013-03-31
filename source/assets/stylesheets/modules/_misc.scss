@@ -141,3 +141,87 @@
     color: $gray-light;
   }
 }
+
+// Find (search results)
+
+.search-results {
+  background: #fff;
+  h1 { 
+    margin-bottom: 0;
+    padding: 0 16px;
+    line-height: 70px;
+  }
+}
+
+.listing {
+  padding: 16px;
+  font-family: $font-regular;
+  border-top: 1px solid #ddd;
+  h4 {
+    margin-bottom: .25em;
+    color: $gray-light;
+  }
+  .photo > a {
+    display: block;
+    line-height: 2.1;
+    color: $gray-med;
+    text-align: center;
+    background: #e5e5e5;
+  }
+  .specs {
+    margin-bottom: 0;
+  }
+  .name {
+    margin-bottom: .25em;
+    @include font-size(28);
+    color: $gray-darkest;
+    .marker {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: .75em;
+      width: 19px;
+      height: 27px;
+      font-family: $font-semibold;
+      @include font-size(14);
+      color: #fff;
+      text-align: center;
+      background: url(/assets/images/marker.png) no-repeat 0 0;
+      background-size: 100%;
+    }
+  }
+  .contact {
+    margin-bottom: .75em;
+    @include font-size(15);
+    line-height: 1.35;
+    color: $gray-light;
+  }
+  .description {
+    margin-bottom: 1em;
+    @include font-size(15);
+    line-height: 1.35;
+    color: $gray-med;
+  }
+  .features {
+    @include font-size(15);
+    color: $gray-light;
+    line-height: 1.35;
+    li {
+      margin-top: .5em;
+      margin-left: .75em;
+      line-height: 1.1;
+      text-indent: -.5em;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:before {
+        margin-right: .65em;
+        @include font-size(11);
+      }
+    }
+  }
+  .pricing-data {
+    margin-bottom: .75em;
+    @include font-size(16);
+    line-height: 1.2;
+  }
+}
