@@ -12,9 +12,46 @@ body_id: find
   .main.flush role="main"
     .grid
       .grid__col.find-refine
-        h3.border Refine your search
-        form.refine
-          | this is the search form
+        h3 Refine your search
+        form action="#"
+          fieldset
+            .field
+              label for="rent" By Rent
+              select name="rent"
+                option value="" $
+                option value="value1" Value 1 
+                option value="value2" Value 2
+                option value="value3" Value 3
+            .field.inline
+              label for="beds" Beds
+              select name="beds"
+                option value="" #
+                option value="value1" 1 
+                option value="value2" 2
+                option value="value3" 3
+            .field.inline
+              label for="baths" Baths
+              select name="baths"
+                option value="" #
+                option value="value1" 1 
+                option value="value2" 2
+                option value="value3" 3
+            .field
+              label for="city" City
+              select name="city"
+                option value="" Select
+                option value="value1" City 1 
+                option value="value2" City 2
+                option value="value3" City 3
+            .field
+              label for="state" State
+              select name="state"
+                option value="" Select
+                option value="value1" State 1 
+                option value="value2" State 2
+                option value="value3" State 3
+            .field
+              button type="submit" Search &gt;
       .grid__col.find-listings
         .search-results
           h1.beta Apartments in City, State
