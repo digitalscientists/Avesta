@@ -6,7 +6,7 @@
   position: absolute;
   margin: 15px;
   z-index: 5;
-  padding: 20px 30px;
+  padding: 20px 25px;
   width: 930px;
   background: #fff;
   @include cf;
@@ -37,7 +37,7 @@ form.find-apartment {
     .chzn-choices {
       background: #e5e5e5;
       border-color: #ccc;
-      @include vendor( 'box-shadow', 'inset -1px 1px 4px rgba(0,0,0,.1);' );
+      @include vendor('border-radius', '2px');
       .search-choice { 
         margin-top: 4px;
         height: 28px;
@@ -67,6 +67,11 @@ form.find-apartment {
 }
 
 // Refine Search Form
+
+.find-refine {
+  border-bottom: 1px solid #d7d7d7;
+}
+
 form.refine-search {
   padding: 15px;
   fieldset {

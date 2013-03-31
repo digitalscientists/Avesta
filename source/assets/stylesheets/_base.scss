@@ -61,6 +61,9 @@ header[role="banner"] {
   padding: 30px 25px;
   &.flush {
     padding: 30px 0;
+    .find & {
+      padding: 0;
+    }
   }
   .home & {
     padding: 0;
