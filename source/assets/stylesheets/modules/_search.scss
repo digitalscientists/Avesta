@@ -4,9 +4,10 @@
 //Find an Apartment Search Form
 .search {
   position: absolute;
-  z-index: 5;
   margin: 15px;
-  padding: 30px 25px;
+  z-index: 5;
+  padding: 20px 30px;
+  width: 930px;
   background: #fff;
   @include cf;
 }
@@ -14,14 +15,20 @@
 //Includes stlye overrides for jQuery Chosen (chosen.css)
 form.find-apartment {
   label {
+    display: inline-block;
     float: left;
     margin-right: 20px;
     @include font-size(25);
+    line-height: 35px;
     color: $gray-dark;
+  }
+  button { 
+    height: 37px;
   }
   .chzn-container {
     display: block;
     float: left;
+    margin-right: 20px;
     @include font-size(17);
     .search-field input {
       height: auto ;
@@ -29,6 +36,16 @@ form.find-apartment {
     }
     .chzn-choices {
       background: #e5e5e5;
+      border-color: #ccc;
+      @include vendor( 'box-shadow', 'inset -1px 1px 4px rgba(0,0,0,.1);' );
+      .search-choice { 
+        margin-top: 4px;
+        height: 28px;
+        font-family: $font-regular;
+        @include font-size(15);
+        line-height: 18px;
+      }
+      .search-choice-close { top: 8px; }
     }
     .chzn-drop {
       margin-top: 5px;

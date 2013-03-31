@@ -33,6 +33,7 @@
   background-image: -o-linear-gradient(top, $from, $to); /* Opera 11.10+ */
   background-image: linear-gradient(to bottom, $from, $to);
 }
+
 // vendor prefixes
 $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 @mixin vendor( $property, $value ) { 

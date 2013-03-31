@@ -1,0 +1,19 @@
+/* BUTTONS 
+---------------------------------------- */
+
+.btn,
+button {
+    display: inline-block;
+    margin: 0;
+    padding: 0.5em 1em;
+    font-family: $font-regular;
+    @include font-size(19);
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background: #9d0622;
+    @include vendor('border-radius', '3px');
+    @include gradient(#104dc8, #0748c3);
+    @include hoverActiveFocus('text-decoration', 'none');
+  }
