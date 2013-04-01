@@ -36,9 +36,12 @@ html {
 
 .wrap {
   margin: 0 auto 80px auto;
-  width: 960px; //update and use only in breakpoint
+  width: 100%;
   border-bottom: 1px solid #ccc;
   @include cf;
+  @include breakpoint(large) {
+    width: 960px;
+  }
 }
 
 header[role="banner"] {

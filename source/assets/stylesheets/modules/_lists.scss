@@ -30,11 +30,21 @@
   list-style-type: none;
   > li {
     margin-top: .35em;
-    padding-left: 20px;
+    padding-left: 2px;
     @include font-size(18);
     line-height: 1.2;
     &:first-child {
       margin-top: 0;
+    }
+    &:before {
+      content: "\3009";
+      display: inline-block;
+      margin-right: 0;
+      font-family: arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: #d6d6d6;
+      vertical-align: 5%;
     }
   }
 }

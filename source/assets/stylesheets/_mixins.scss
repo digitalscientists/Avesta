@@ -82,3 +82,25 @@ $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
     //remove if not supporting IE7 and lower
     zoom:1;
 }
+
+/* Media Query Breakpoint Mixin
+---------------------------------------- */
+
+@mixin breakpoint($point) {
+  // 20em (320px)
+  @if $point == tiny { @media only screen and (min-width: 20em)  { @content; } }
+  // 30em (480px)
+  @else if $point == small { @media only screen and (min-width: 30em) { @content; } }
+  // 37.5em (600px)
+  @else if $point == medium { @media only screen and  (min-width: 37.5em) { @content; } }
+  // 48em (768px)
+  @else if $point == regular { @media only screen and  (min-width: 48em) { @content; } }
+  // 56.25em (900px)
+  @else if $point == large { @media only screen and  (min-width: 56.25em) { @content; } }
+  // 68.75em (1100px)
+  @else if $point == larger { @media only screen and  (min-width: 68.75em) { @content; } }
+  // 81.25em (1300px)
+  @else if $point == huge { @media only screen and  (min-width: 81.25em) { @content; } }
+  // custom media query
+  @else { @media only screen and  (min-width: $point / $base-font-size +em) { @content; } }
+}

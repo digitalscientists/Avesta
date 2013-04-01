@@ -20,8 +20,7 @@
 
 // Feature blocks - used on home page
 
-.feature-block {
-  /* adjust to ensure equal height at wide screen layout */
+.feature {
   padding: 20px 18px;
   background: $feature-background;
   .title {
@@ -34,6 +33,9 @@
     font-family: $font-regular;
     @include font-size(23);
     color: $gray-darkest;
+  }
+  @include breakpoint(large) {  
+    height: 150px;
   }
 }
 
@@ -163,6 +165,10 @@
   }
 }
 
+// Find column widths
+
+.find-listings { width: 78.5%; }
+.find-refine { width: 21.5%; }
 
 
 .search-results {
