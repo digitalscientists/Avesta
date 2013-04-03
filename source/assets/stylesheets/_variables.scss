@@ -38,3 +38,7 @@ $gray-dark: #333;
 $gray-med: #666;
 $gray-light: #999;
 
+//RWD Breakpoints - define in px, mq mixin will convert to ems
+
+$medium: 768;
+$large: 900;

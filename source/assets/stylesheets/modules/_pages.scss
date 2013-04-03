@@ -35,7 +35,7 @@
     @include font-size(23);
     color: $gray-darkest;
   }
-  @include breakpoint(large) {  
+  @include mq($large) {  
     height: 150px;
   }
 }
@@ -153,6 +153,7 @@
 }
 
 // Find (search results)
+
 .find-refine {
   background: #fff;
   h3 {
@@ -165,12 +166,6 @@
     border-bottom: 1px solid #ddd;
   }
 }
-
-// Find column widths
-
-.find-listings { width: 78.5%; }
-.find-refine { width: 21.5%; }
-
 
 .search-results {
   background: #fff;

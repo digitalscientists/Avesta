@@ -39,7 +39,7 @@ html {
   width: 100%;
   border-bottom: 1px solid #ccc;
   @include cf;
-  @include breakpoint(large) {
+  @include mq($large) {
     width: 960px;
   }
 }
