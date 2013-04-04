@@ -45,18 +45,22 @@ html {
 }
 
 header[role="banner"] {
-  margin-top: 22px;
+  margin: 22px 0;
+  padding: 0 15px;
   @include cf;
 }
 
 .content {
   @include font-size(17);
-  border: 15px solid $main-background;
-  &.content-bg {
-    background: $main-background;
-  }
+  border: 15px solid #fff;
   .home & {
     border: none;
+  }
+  @include mq($large) {
+    border-color: $main-background;
+    &.content-bg {
+      background: $main-background;
+    }
   }
 }
 
