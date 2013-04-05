@@ -150,7 +150,8 @@ form.refine-search {
     display: block;
     font-family: $font-semibold;
     @include font-size(15);
-    color: $gray-med;
+    line-height: 1.75;
+    color: #777;
   }
   select {
     width: 100%;
@@ -165,5 +166,48 @@ form.refine-search {
       width: auto;
     }
     .btn--cancel { display: none; }
+  }
+}
+
+// select styling
+
+.selectbox {
+  position: relative; 
+  display: block; 
+  width: 100%;
+  border: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
+  &:after {
+    content: "\2335";
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    margin-top: 5px;
+    font-family: arial, sans-serif;
+    font-size: 24px;
+  }  
+  @include gradient(#f6f6f6, #ececec);
+  @include vendor(border-radius, 3px);
+  select {
+    z-index: 10; 
+    position: relative;
+    left: 10px;
+    border: none; 
+    background: none; 
+    outline: none; 
+    opacity: 0;
+    height: 36px;
+    -webkit-appearance: none; 
+    filter: alpha(opacity=0);
+  }
+  .selecttext {
+    z-index: 9;
+    position: absolute;
+    left: 8px;
+    display: inline-block;
+    padding-top: 7px;
+    font-family: $font-regular;
+    background: transparent;
+    color: #555;
   }
 }

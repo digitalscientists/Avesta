@@ -4,8 +4,8 @@
 $(document).ready(function() {
   
   //init jquery chose
-  $(".chzn-select").chosen(); 
-  $(".chzn-select-deselect").chosen({allow_single_deselect:true});
+  $('.chzn-select').chosen(); 
+  $('.chzn-select-deselect').chosen({allow_single_deselect:true});
 
   //rwd - toggle main nav
   var $menu = $('#nav-main'),
@@ -21,5 +21,17 @@ $(document).ready(function() {
   $('#show-refine-search').click(function() {
     $('.find-refine').show();
     });
+
+  //select styling for refine search form
+  $('.refine-search select').each(function(){
+    $(this).wrap('<div class="selectbox"/>');
+    $(this).after("<span class='selecttext'></span>");
+    var val = $(this).children("option:selected").text();
+    $(this).next(".selecttext").text(val);
+    $(this).change(function(){
+      var val = $(this).children("option:selected").text();
+      $(this).next(".selecttext").text(val);
+    });
+  });
 
 });
