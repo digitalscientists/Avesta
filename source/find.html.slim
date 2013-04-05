@@ -8,7 +8,7 @@ body_id: find
 .hero
   img src="http://placehold.it/960x475&text=Google Map" alt=""
   .page-name 
-    a href="#" Refine your search
+    a id="show-refine-search" href="#" Refine your search
 
 .content.content-bg
   .main.flush role="main"
@@ -54,6 +54,7 @@ body_id: find
                   option value="value2" State 2
                   option value="value3" State 3
               .field
+                button class="btn--cancel" Back
                 button type="submit" Search
       .grid__col.col-100.large-785
         .search-results

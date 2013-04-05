@@ -8,7 +8,6 @@ $(document).ready(function() {
   $(".chzn-select-deselect").chosen({allow_single_deselect:true});
 
   //rwd - toggle main nav
-  $('body').addClass('js');
   var $menu = $('#nav-main'),
   $menulink = $('.menu-link');
   
@@ -17,5 +16,10 @@ $(document).ready(function() {
     $menu.toggleClass('active');
     return false;
   });
+
+  //show refine search on mobile
+  $('#show-refine-search').click(function() {
+    $('.find-refine').show();
+    });
 
 });

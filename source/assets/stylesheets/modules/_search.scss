@@ -105,7 +105,28 @@ form.find-apartment {
 // Refine Search Form
 
 .find-refine {
+  z-index: 100;
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  height: 100%;
+  width: 100%;
   border-bottom: 1px solid #d7d7d7;
+  h3 {
+    background: #ededed;
+    border-top: 2px solid #ddd;
+  }
+  @include mq($large) {
+    display: block;
+    position: static;
+    height: auto;
+    width: auto;
+    h3 {
+      background: #fff;
+      border-top: none;
+    }
+  }
 }
 
 form.refine-search {
@@ -133,5 +154,16 @@ form.refine-search {
   }
   select {
     width: 100%;
+  }
+  button {
+    margin-right: 20px;
+    width: 40%;
+  }
+  @include mq($large) {
+    button { 
+      margin: 0;
+      width: auto;
+    }
+    .btn--cancel { display: none; }
   }
 }
