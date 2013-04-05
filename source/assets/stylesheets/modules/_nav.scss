@@ -75,7 +75,7 @@
       zoom:1;
       font-family: $font-regular;
       color: $gray-med;
-      @include hoverActiveFocus('text-decoration', none);
+      @include hoverActiveFocus(text-decoration, none);
     }
     > a { padding-left: 20px; }
   }
@@ -120,7 +120,8 @@
           padding-left: 0;
           font-family: $font-semibold;
           color: $gray-med;
-          @include hoverActiveFocus('color', $brand-color);
+          @include hoverActiveFocus(color, $brand-color);
+          @include hoverActiveFocus(background, none);
       }
     }
   }
@@ -168,3 +169,19 @@
     display: none;
   }
 }
+
+// Highlight item for current page
+
+.about #nav-about > a,
+.careers #nav-careers > a,
+.contact #nav-contact > a,
+.find #nav-find > a { color: $brand-color; }
+
+#about-overview #sub-about-overview > a,
+#about-leadership #sub-about-leadership > a,
+#about-news-events #sub-about-news > a,
+#about-communities #sub-about-communities > a,
+#careers-overview #sub-careers-overview > a,
+#careers-jobsearch #sub-careers-jobsearch > a { color: $brand-color; }
+
+
