@@ -36,7 +36,12 @@ form.find-apartment {
     color: $gray-dark;
   }
   button { 
-    height: 37px;
+    z-index: 5;
+    position: relative;
+    margin: 4px 0 0 -34px;
+    height: 29px;
+    width: 30px;
+    font-size: 0;
   }
   #find_large_chzn { display: none;}
   .chzn-container {
@@ -49,9 +54,8 @@ form.find-apartment {
       font-family: $font-regular;
     }
     .chzn-choices {
-      background: #e5e5e5;
+      background: #fff;
       border-color: #ccc;
-      @include vendor('border-radius', '2px');
       .search-choice { 
         margin-top: 4px;
         height: 28px;
@@ -67,7 +71,7 @@ form.find-apartment {
     }
     .group-result {
       font-family: $font-semibold;
-      @include font-size(18);
+      @include font-size(19);
       color: $gray-dark;
     }
     .group-option {
@@ -81,6 +85,17 @@ form.find-apartment {
   @include mq($large) {
     label {
       display: inline-block;
+    }
+    button {
+      @include font-size(18);
+      z-index: 5;
+      position: relative;
+      margin: 0;
+      height: auto;
+      width: auto;
+    }
+    .chzn-container .chzn-choices {
+      background: #e5e5e5;
     }
     #find_mobile_chzn { display: none; }
     #find_large_chzn { display: block; margin-right: 20px ;}
