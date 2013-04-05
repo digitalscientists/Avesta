@@ -51,6 +51,13 @@ $gutter: 15px;
 .col-75 { width: 75%; }
 .col-100 { width: 100%; padding: 0 0 $gutter 0; }
 
+// Add padding to primary column on wide layout
+
+.primary {
+  @include mq($large) {
+    padding-right: 25px !important;
+  }
+}
 
 
 
