@@ -12,12 +12,16 @@
   @include mq($large) {
     z-index: 5;
     position: absolute;
-    top: 180%;
+    top: 190%;
     left: 0;
+    display: none;
     margin: 0 1.5%;
     padding: 20px 25px;
     width: 97%;
     background: #fff;
+    .home & {
+      display: block;
+    }
   }
 }
 

@@ -90,7 +90,8 @@
     > li {
       margin-right: 9px;
       padding: 0;
-      line-height: 40px;
+      height: 40px;
+      line-height: 48px;
       background: none;
       border: none;
       @include font-size(18);
@@ -99,8 +100,9 @@
         margin-right: 7px;
         content: "|";
         color: #ccc;
-        font-family: $font-light;
+        font-family: sans-serif;
         font-weight: normal;
+        vertical-align: middle;
       }
       &#nav-find {
         display: inline-block;
