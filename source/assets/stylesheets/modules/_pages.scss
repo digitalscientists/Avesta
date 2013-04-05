@@ -8,9 +8,12 @@
   @include cf;
   .page-title {
     margin: .5em 0 0 0;
-    padding: 0 15px;
+    padding: 0 25px;
     line-height: 1.1;
-    color: #444;
+    color: $brand-color;
+    .home & {
+      color: #444;
+    }
   }
   .home & {
     margin-bottom: 25px;
@@ -25,7 +28,39 @@
       @include font-size(44);
       line-height: 1.1;
       color: #fff;
+      .home & {
+        color: #fff;
+      }
     }
+  }
+}
+
+// Page Name
+.page-name {
+  padding: 0 12px;
+  font-family: $font-regular;
+  @include font-size(16);
+  line-height: 2;
+  color: $gray-med;
+  background: #f1f1f1;
+  > a {
+    display: block;
+    color: $gray-med;
+    @include hoverActiveFocus(text-decoration, none);
+    &:after {
+      content: "\3009";
+      display: block;
+      float: right;
+      margin: 0;
+      font-family: arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 32px;
+      color: $gray-med;
+    }
+  }
+  @include mq($large) {
+    display: none;
   }
 }
 

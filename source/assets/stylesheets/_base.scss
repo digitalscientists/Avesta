@@ -52,12 +52,11 @@ header[role="banner"] {
 
 .content {
   @include font-size(17);
-  border: 15px solid #fff;
   .home & {
     border: none;
   }
   @include mq($large) {
-    border-color: $main-background;
+    border: 15px solid $main-background;
     &.content-bg {
       background: $main-background;
     }
