@@ -7,4 +7,15 @@ $(document).ready(function() {
   $(".chzn-select").chosen(); 
   $(".chzn-select-deselect").chosen({allow_single_deselect:true});
 
+  //rwd - toggle main nav
+  $('body').addClass('js');
+  var $menu = $('#nav-main'),
+  $menulink = $('.menu-link');
+  
+  $menulink.click(function() {
+    $menulink.toggleClass('active');
+    $menu.toggleClass('active');
+    return false;
+  });
+
 });

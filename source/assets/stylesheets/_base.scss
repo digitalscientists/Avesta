@@ -45,8 +45,8 @@ html {
 }
 
 header[role="banner"] {
+  position: relative;
   margin: 22px 0;
-  padding: 0 15px;
   @include cf;
 }
 
@@ -79,7 +79,11 @@ header[role="banner"] {
 
 footer[role="contentinfo"] {
   margin: 20px 0;
+  padding: 0 15px;
   @include cf;
+  @include mq($large) {
+    padding: 0;
+  }
 }
 
 /* TYPOGRAPHY 

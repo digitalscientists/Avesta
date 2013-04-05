@@ -3,19 +3,28 @@
 
 //Find an Apartment Search Form
 .search {
-  position: absolute;
-  margin: 15px;
-  z-index: 5;
-  padding: 20px 25px;
-  width: 930px;
-  background: #fff;
+  clear: both;
+  margin-top: 20px;
+  padding: 13px 10px;
+  width: 100%;
+  background: #f1f1f1;
   @include cf;
+  @include mq($large) {
+    z-index: 5;
+    position: absolute;
+    top: 180%;
+    left: 0;
+    margin: 0 1.5%;
+    padding: 20px 25px;
+    width: 97%;
+    background: #fff;
+  }
 }
 
 //Includes stlye overrides for jQuery Chosen (chosen.css)
 form.find-apartment {
   label {
-    display: inline-block;
+    display: none;
     float: left;
     margin-right: 20px;
     @include font-size(25);
@@ -25,10 +34,11 @@ form.find-apartment {
   button { 
     height: 37px;
   }
+  #find_large_chzn { display: none;}
   .chzn-container {
     display: block;
     float: left;
-    margin-right: 20px;
+    width: 100%;
     @include font-size(17);
     .search-field input {
       height: auto ;
@@ -63,6 +73,13 @@ form.find-apartment {
         background: #edf3fc;
       }
     }
+  }
+  @include mq($large) {
+    label {
+      display: inline-block;
+    }
+    #find_mobile_chzn { display: none; }
+    #find_large_chzn { display: block; margin-right: 20px ;}
   }
 }
 

@@ -1,12 +1,28 @@
 header role="banner"
   a href="/" class="logo"
     img src="assets/images/logo.jpg" alt="Avesta"
-  ul.nav
+  a href="#menu" class="menu-link" Menu
+  == render_partial "search"
+  ul.nav#nav-main
     li#nav-find
       a href="#" Find an Apartment
     li#nav-about
       a href="about.html" About
-    li#nav-comm
+      ul.nav.nav--sub
+        li#sub-about-overview 
+          a href="about.html" title="" Overview
+        li#sub-about-leadership 
+          a href="leadership.html" title="" Leadership
+        li#sub-about-news 
+          a href="news-events.html" title="" News & Events
+        li#sub-about-communities
+          a href="communities.html" title="" Communities
+    li#nav-careers
       a href="careers.html" Careers
+      ul.nav.nav--sub
+        li#sub-careers-overview 
+          a href="careers.html" title="" Overview
+        li#sub-careers-jobsearch 
+          a href="job-search.html" title="" Job Search
     li#nav-contact
       a href="contact.html" Contact
