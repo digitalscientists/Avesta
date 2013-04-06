@@ -37,10 +37,10 @@ var Avesta = {
     })
     self.cities = _.uniq(self.cities.sort(),true)
   },
-  renderResults: function(){
+  renderResults: function(results){
     $('#search-results').html(
       this._render('search-results',{
-        city: 'Alph',state: 'FL',results: this.data
+        city: 'Alph',state: 'FL',results: results
       })
     )
     $('select[name=city]').append(
@@ -51,6 +51,21 @@ var Avesta = {
   },
   initialize: function(){
     this.collectTemplates();
+  }
+};
+
+Avesta.Search = {
+  initialize: function(){
+    var self = this;
+    $('.refine-search').find('input,select').on('change',function(e){
+      var option = this.getAttribute('name'),
+          value = $('option:selected', this).attr('value')
+      self._filter(option,value);
+    });
+  },
+  _filter: function(option,value){
+    var search = {}; search[option] = value;
+    Avesta.renderResults(_.where(Avesta.data,search))
   }
 };
 
@@ -93,10 +108,11 @@ $(document).ready(function() {
     callback: function(data, tabletop) {
        Avesta.data = data;
        Avesta.prepareData();
-       Avesta.renderResults();
+       Avesta.renderResults(Avesta.data);
      },
      simpleSheet: true
   })
 
   Avesta.initialize();
+  Avesta.Search.initialize();
 });
