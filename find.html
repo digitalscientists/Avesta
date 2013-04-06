@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Find an Apartment - Avesta Homes, LLC</title>
     <meta content="This is the Find an Apartment page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365197496" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365197495" type="text/javascript"></script></head>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365209138" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365209148" type="text/javascript"></script></head>
   <body class="find" id="find">
     <div class="wrap"><header role="banner">
         <a class="logo" href="/"><img alt="Avesta" src="assets/images/logo.jpg" /></a><a class="menu-link" href="#menu">Menu</a><div class="search">
@@ -72,7 +72,8 @@
                       <label for="baths">Baths</label><select name="baths"><option value="">#</option><option value="value1">1 </option><option value="value2">2</option><option value="value3">3</option></select>
                     </div>
                     <div class="field">
-                      <label for="city">City</label><select name="city"><option value="">Select</option><option value="value1">City 1 </option><option value="value2">City 2</option><option value="value3">City 3</option></select>
+                      <label for="city">City</label><select name="city"><option value="">Select</option></select>
+                      <script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
                     </div>
                     <div class="field">
                       <label for="state">State</label><select name="state"><option value="">Select</option><option value="value1">State 1 </option><option value="value2">State 2</option><option value="value3">State 3</option></select>
@@ -84,68 +85,41 @@
                 </form>
               </div>
             </div>
-            <div class="grid__col col-100 large-785">
-              <div class="search-results">
-                <h1 class="beta">Apartments in City, State</h1>
-                <div class="listing grid">
-                  <div class="photo grid__col col-100 large-50">
-                    <img alt="Community Photo" src="http://placehold.it/350x253" /><a href="#">View Community</a>
-                  </div>
-                  <div class="details grid__col col-100 large-50">
-                    <h2 class="name">Avesta Bella Mar<div class="marker">4</div>
-                    </h2>
-                    <p class="contact">12406 N. 15th Street, Tampa, FL 33612<br/>(866) 380-0273</p>
-                    <p class="description">Conveniently located in Tampa, our residents enjoy being within minutes of University Mall, USF, and Busch Gardens.</p>
-                    <div class="specs grid">
-                      <div class="features grid__col col-625">
-                        <ul class="list-bullets">
-                          <li>Feature 1</li>
-                          <li>Feature 2</li>
-                          <li>Really long feature that wraps to a second line</li>
-                          <li>Last Feature</li>
-                        </ul>
-                      </div>
-                      <div class="pricing grid__col col-375">
-                        <h4>Rent Range</h4>
-                        <p class="pricing-data">$475 - $765</p>
-                        <h4>Bedrooms</h4>
-                        <p class="pricing-data">1 - 2</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="listing grid">
-                  <div class="photo grid__col col-100 large-50">
-                    <img alt="Community Photo" src="http://placehold.it/350x253" /><a href="#">View Community</a>
-                  </div>
-                  <div class="details grid__col col-100 large-50">
-                    <h2 class="name">Avesta Busch Gardens<div class="marker">12</div>
-                    </h2>
-                    <p class="contact">12406 N. 15th Street, Tampa, FL 33612<br/>(866) 380-0273</p>
-                    <p class="description">Conveniently located in Tampa, our residents enjoy being within minutes of University Mall, USF, and Busch Gardens.</p>
-                    <div class="specs grid">
-                      <div class="features grid__col col-625">
-                        <ul class="list-bullets">
-                          <li>Feature 1</li>
-                          <li>Feature 2</li>
-                          <li>Really long feature that wraps to a second line</li>
-                          <li>Last Feature</li>
-                        </ul>
-                      </div>
-                      <div class="pricing grid__col col-375">
-                        <h4>Rent Range</h4>
-                        <p class="pricing-data">$475 - $765</p>
-                        <h4>Bedrooms</h4>
-                        <p class="pricing-data">1 - 2    </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="grid__col col-100 large-785" id="search-results">
+              <script name="search-results" type="text/template">
+                <div class="search-results">
+                  <h1 class="beta">Apartments in <%= city %>, <%= state %></h1><% _.each(results, function(result){ %> 
+                    <%= Avesta._render('search-result',result)%>
+                  <% }) %></div>
                 <div class="pagination">MORE RESULTS<div class="pagination__pages">
                     <a class="current" href="#">1</a><a href="#">2</a><a href="#">3</a><a class="next" href="#"></a>
                   </div>
                 </div>
-              </div>
+              </script>
+              <script name="search-result" type="text/template">
+                <div class="listing grid">
+                  <div class="photo grid__col col-100 large-50">
+                    <img alt="Community Photo" src="<%= weblinks || 'http://placehold.it/342x256&text=No%20Image%20Available' %>" /><a href="<%= url %>">View Community</a>
+                  </div>
+                  <div class="details grid__col col-100 large-50">
+                    <h2 class="name"><%= name %><div class="marker">4</div>
+                    </h2>
+                    <p class="contact"><%= street %>, <%= city %>, <%= state %><br/><%= phone %></p>
+                    <p class="description"><%= propdescription %></p>
+                    <div class="specs grid">
+                      <div class="features grid__col col-625">
+                        <ul class="list-bullets"><% _.each(features, function(feature) { %><li><%= feature %></li><% }) %></ul>
+                      </div>
+                      <div class="pricing grid__col col-375">
+                        <h4>Rent Range</h4>
+                        <p class="pricing-data">$<%= minRent[0] %> - $<%= maxRent[maxRent.length - 1] %></p>
+                        <h4>Bedrooms</h4>
+                        <p class="pricing-data"><%= numBeds[0] %> - <%= numBeds[numBeds.length - 1] %></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </script>
             </div>
           </div>
         </div>
