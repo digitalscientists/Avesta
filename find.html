@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Find an Apartment - Avesta Homes, LLC</title>
     <meta content="This is the Find an Apartment page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365451592" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365451591" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365463117" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365463116" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz82AY4Oulz1gwCoQ&sensor=false" type="text/javascript"></script>
   </head>
   <body class="find" id="find">
@@ -89,8 +89,8 @@
             <div class="grid__col col-100 large-785" id="search-results">
               <script name="search-results" type="text/template">
                 <div class="search-results">
-                  <h1 class="beta">Apartments in <%= city %>, <%= state %></h1><% _.each(results, function(result){ %> 
-                    <%= Avesta._render('search-result',result)%>
+                  <h1 class="beta">Apartments in <%= city %>, <%= state %></h1><% index = 0 %><% _.each(results, function(result){ result.index = ++index; %> 
+                    <%= Avesta._render('search-result',result) %>
                   <% }) %></div>
               </script>
               <script name="search-result" type="text/template">
@@ -99,7 +99,7 @@
                     <img alt="Community Photo" src="<%= weblinks || 'http://placehold.it/342x256&text=No%20Image%20Available' %>" /><a href="<%= url %>">View Community</a>
                   </div>
                   <div class="details grid__col col-100 large-50">
-                    <h2 class="name"><%= name %><div class="marker">4</div>
+                    <h2 class="name"><%= name %><div class="marker"><%= index %></div>
                     </h2>
                     <p class="contact"><%= street %>, <%= city %>, <%= state %><br/><%= phone %></p>
                     <p class="description"><%= propdescription %></p>
