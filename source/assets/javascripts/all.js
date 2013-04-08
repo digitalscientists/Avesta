@@ -134,6 +134,11 @@ Avesta.Map = {
       var point = overlayProjection.fromLatLngToDivPixel(this.bounds.getSouthWest());
       this.div.style.left = point.x - 19 + 'px';
       this.div.style.top = point.y - 27 + 'px';
+    };
+
+    this.Marker.prototype.onRemove = function() {
+      this.div.parentNode.removeChild(this.div);
+      this.div = null;
     }
 
   },
@@ -145,7 +150,7 @@ Avesta.Map = {
       var latlng = place.latlng.split(','),
           pos = new google.maps.LatLng(parseFloat(latlng[0]),parseFloat(latlng[1]));
       var bounds = new google.maps.LatLngBounds(pos,pos);   
-      new self.Marker(bounds, self.map, ++i);
+      self.markers.push(new self.Marker(bounds, self.map, ++i));
       self.bounds.extend(pos);
     })
     self.map.fitBounds(self.bounds);
@@ -154,6 +159,7 @@ Avesta.Map = {
     this.bounds = new google.maps.LatLngBounds();
     _.each(this.markers,function(m){
       m.setMap(null)
+      m = null;
     })
   }
 }
