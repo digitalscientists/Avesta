@@ -3,6 +3,23 @@
 //= require lib/underscore-min
 //= require lib/tabletop
 
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
 var Avesta = {
   cities: [],
   templates: {},
@@ -38,13 +55,13 @@ var Avesta = {
     self.cities = _.uniq(self.cities.sort(),true)
   },
   renderResults: function(results){
-    $('#search-results').html(
-      this._render('search-results',{
-        city: 'Alph',state: 'FL',results: results
-      })
-    )
-    $('select[name=city]').append(
-      this._render('city-options',{cities: this.cities}));
+    if($('#search-results').length){
+      $('#search-results').html(
+        this._render('search-results',{
+          city: 'Alph',state: 'FL',results: results
+        })
+      )
+    }
   },
   _render: function(template, object){
     return this.templates[template](object);
@@ -58,14 +75,38 @@ Avesta.Search = {
   initialize: function(){
     var self = this;
     $('.refine-search').find('input,select').on('change',function(e){
-      var option = this.getAttribute('name'),
-          value = $('option:selected', this).attr('value')
-      self._filter(option,value);
+      self._filter($(this.form).serializeObject());
     });
   },
-  _filter: function(option,value){
-    var search = {}; search[option] = value;
-    Avesta.renderResults(_.where(Avesta.data,search))
+  prepareForm: function(){
+    $('select[name=city]').append(
+      Avesta._render('city-options',{cities: Avesta.cities}));
+  },
+  _filter: function(options){
+    var results = _.filter(Avesta.data, function(place){
+      var beds = true, baths = true, rent = true, city = true;
+
+      if(options.beds)  beds = _.contains(place.numBeds,options.beds);
+      if(options.baths) baths = _.contains(place.numBaths,options.baths);
+      if(options.city)  city = place.city == options.city;
+      if(options.rent){
+        var range = _.map(options.rent.split('-'),function(r){return parseInt(r)}),
+            minRent = parseInt(place.minRent[0]);
+            maxRent = parseInt(place.maxRent[place.maxRent.length - 1]);
+        rent = (minRent >= range[0] && minRent <= range[1]) ||
+               (maxRent >= range[0] && maxRent <= range[1]);
+      }
+
+      return beds && baths && rent && city;
+    });
+
+    Avesta.renderResults(results)
+  },
+  _parseQueryParams: function(){
+    return _.map(window.location.search.split('&'), function(str){
+      var match = str.match(/city=(.*)/);
+      if(match) return match[1];
+    });
   }
 };
 
@@ -88,7 +129,7 @@ $(document).ready(function() {
   //show refine search on mobile
   $('#show-refine-search').click(function() {
     $('.find-refine').show();
-    });
+  });
 
   //select styling for refine search form
   $('.refine-search select').each(function(){
@@ -108,9 +149,14 @@ $(document).ready(function() {
     callback: function(data, tabletop) {
        Avesta.data = data;
        Avesta.prepareData();
-       Avesta.renderResults(Avesta.data);
-     },
-     simpleSheet: true
+       Avesta.Search.prepareForm();
+       var cities = Avesta.Search._parseQueryParams();
+       if(cities.length)
+         Avesta.Search._filter('city', cities[0]);
+       else
+         Avesta.renderResults(Avesta.data);
+    },
+    simpleSheet: true
   })
 
   Avesta.initialize();

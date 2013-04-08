@@ -22,41 +22,35 @@ body_id: find
                 label for="rent" By Rent
                 select name="rent"
                   option value="" $
-                  option value="value1" Value 1 
-                  option value="value2" Value 2
-                  option value="value3" Value 3
+                  option value="300-500" $300 - 500
+                  option value="500-700" $500 - 700
+                  option value="700-900" $700 - 900
+                  option value="900-1100" $900 - 1100
               .field.inline
                 label for="beds" Beds
                 select name="beds"
                   option value="" #
-                  option value="value1" 1 
-                  option value="value2" 2
-                  option value="value3" 3
+                  option value="1" 1 
+                  option value="2" 2
+                  option value="3" 3
               .field.inline.float--right
                 label for="baths" Baths
                 select name="baths"
                   option value="" #
-                  option value="value1" 1 
-                  option value="value2" 2
-                  option value="value3" 3
+                  option value="1" 1 
+                  option value="1.5" 1.5
+                  option value="2" 2
+                  option value="2.5" 2.5
               .field
                 label for="city" City
                 select name="city"
                   option value="" Select
-                script type='text/template' name='city-options'
-                  | <% _.each(cities, function(city){ %>
-                  option value="<%= city %>" <%= city %>
-                  | <% }) %>
               .field
                 label for="state" State
                 select name="state"
-                  option value="" Select
-                  option value="value1" State 1 
-                  option value="value2" State 2
-                  option value="value3" State 3
+                  option value="FL" FL
               .field
                 button class="btn--cancel" Back
-                button type="submit" Search
       .grid__col.col-100.large-785#search-results
         script type='text/template' name='search-results'
           .search-results

@@ -19,6 +19,10 @@ html
     link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
     == stylesheet_link_tag "all"
     == javascript_include_tag "all"
+    script type='text/template' name='city-options'
+      | <% _.each(cities, function(city){ %>
+      option value="<%= city %>" <%= city %>
+      | <% }) %>
   
   body class=data.page.body_classes id=data.page.body_id
     .wrap
