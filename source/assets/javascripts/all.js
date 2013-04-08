@@ -173,7 +173,9 @@ Avesta.Map.Marker = function(bounds,map,number){
 $(document).ready(function() {
   
   //init jquery chose
-  $('.chzn-select').chosen(); 
+  $('.chzn-select').chosen().change(function(e){
+    this.form.submit();
+  }); 
   $('.chzn-select-deselect').chosen();
 
   //rwd - toggle main nav
