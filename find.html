@@ -5,12 +5,13 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Find an Apartment - Avesta Homes, LLC</title>
     <meta content="This is the Find an Apartment page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365209138" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365209148" type="text/javascript"></script></head>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365209138" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365445317" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
+  </head>
   <body class="find" id="find">
     <div class="wrap"><header role="banner">
         <a class="logo" href="/"><img alt="Avesta" src="assets/images/logo.jpg" /></a><a class="menu-link" href="#menu">Menu</a><div class="search">
-          <form class="find-apartment">
-            <label>Find an Apartment</label><select class="chzn-select" data-placeholder="Search by City, State" id="find-mobile" multiple="multiple" style="width: 300px;"></select><select class="chzn-select" data-placeholder="Search by City, State" id="find-large" multiple="multiple" style="width: 510px;"><option value=""></option><optgroup label="Florida"><option>Atlantic Beach</option><option>Bradenton</option><option>Clearwater</option><option>Eustis</option><option>Jacksonville</option><option>Lakeland</option><option>Largo</option></optgroup></select><button type="submit">Search</button>
+          <form action="find.html" class="find-apartment">
+            <label>Find an Apartment</label><select class="chzn-select" data-placeholder="Search by City, State" id="find-mobile" multiple="multiple" style="width: 300px;"></select><select class="chzn-select" data-placeholder="Search by City, State" id="find-large" multiple="multiple" name="city" style="width: 510px;"><option value=""></option><optgroup label="Florida"><option>Atlantic Beach</option><option>Bradenton</option><option>Clearwater</option><option>Eustis</option><option>Jacksonville</option><option>Lakeland</option><option>Largo</option><option>Mount Dora</option><option>New Port Richey</option><option>Orlando</option><option>Pinellas Park</option><option>Saint Petersburg</option><option>Sarasota</option><option>Tampa</option><option>Winter Haven</option></optgroup></select><button type="submit">Search</button>
           </form>
         </div><ul class="nav" id="nav-main">
           <li id="nav-find">
@@ -63,23 +64,22 @@
                 <form action="#" class="refine-search">
                   <fieldset>
                     <div class="field">
-                      <label for="rent">By Rent</label><select name="rent"><option value="">$</option><option value="value1">Value 1 </option><option value="value2">Value 2</option><option value="value3">Value 3</option></select>
+                      <label for="rent">By Rent</label><select name="rent"><option value="">$</option><option value="300-500">$300 - 500</option><option value="500-700">$500 - 700</option><option value="700-900">$700 - 900</option><option value="900-1100">$900 - 1100</option></select>
                     </div>
                     <div class="field inline">
-                      <label for="beds">Beds</label><select name="beds"><option value="">#</option><option value="value1">1 </option><option value="value2">2</option><option value="value3">3</option></select>
+                      <label for="beds">Beds</label><select name="beds"><option value="">#</option><option value="1">1 </option><option value="2">2</option><option value="3">3</option></select>
                     </div>
                     <div class="field inline float--right">
-                      <label for="baths">Baths</label><select name="baths"><option value="">#</option><option value="value1">1 </option><option value="value2">2</option><option value="value3">3</option></select>
+                      <label for="baths">Baths</label><select name="baths"><option value="">#</option><option value="1">1 </option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option></select>
                     </div>
                     <div class="field">
                       <label for="city">City</label><select name="city"><option value="">Select</option></select>
-                      <script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
                     </div>
                     <div class="field">
-                      <label for="state">State</label><select name="state"><option value="">Select</option><option value="value1">State 1 </option><option value="value2">State 2</option><option value="value3">State 3</option></select>
+                      <label for="state">State</label><select name="state"><option value="FL">FL</option></select>
                     </div>
                     <div class="field">
-                      <button class="btn--cancel">Back</button><button type="submit">Search</button>
+                      <button class="btn--cancel">Back</button>
                     </div>
                   </fieldset>
                 </form>
