@@ -2,3 +2,19 @@
   width: 960px;
   height: 475px;
 }
+.marker {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: .75em;
+  width: 19px;
+  height: 27px;
+  font-family: $font-regular;
+  @include font-size(12);
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -.1em;
+  background: url(/assets/images/marker.png) no-repeat 0 0;
+  background-size: 100%;
+  position: absolute;
+}
