@@ -100,7 +100,8 @@ Avesta.Search = {
       return beds && baths && rent && city;
     });
 
-    Avesta.renderResults(results)
+    Avesta.renderResults(results);
+    Avesta.Map.addMarkers(results);
   },
   _parseQueryParams: function(){
     return _.map(window.location.search.split('&'), function(str){
@@ -110,11 +111,46 @@ Avesta.Search = {
   }
 };
 
+Avesta.Map = {
+  initialize: function(){
+    var mapOptions = {
+      center: new google.maps.LatLng(28.62219,-81.415708),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    this.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    this.bounds = new google.maps.LatLngBounds();
+  },
+  markers: [],
+  addMarkers: function(places){
+    this.clearMarkers();
+    var self = this;
+    _.each(places, function(place){
+      var latlng = place.latlng.split(','),
+          pos = new google.maps.LatLng(parseFloat(latlng[0]),parseFloat(latlng[1]));
+      self.markers.push(new google.maps.Marker({
+        position: pos,
+        map: self.map,
+        title: place.name
+      }))
+      self.bounds.extend(pos);
+    })
+    self.map.fitBounds(self.bounds);
+  },
+  clearMarkers: function(){
+    this.bounds = new google.maps.LatLngBounds();
+    _.each(this.markers,function(m){
+      m.setMap(null)
+    })
+  }
+}
+
+
 $(document).ready(function() {
   
   //init jquery chose
   $('.chzn-select').chosen(); 
-  $('.chzn-select-deselect').chosen({allow_single_deselect:true});
+  $('.chzn-select-deselect').chosen();
 
   //rwd - toggle main nav
   var $menu = $('#nav-main'),
@@ -147,14 +183,18 @@ $(document).ready(function() {
   Tabletop.init({
     key: 'https://docs.google.com/spreadsheet/pub?key=0AuVlvDns_FoWdFJ3a3NzT2RENy01eHlta2tlcUdVM2c&',
     callback: function(data, tabletop) {
+       Avesta.Map.initialize();
        Avesta.data = data;
        Avesta.prepareData();
        Avesta.Search.prepareForm();
        var cities = Avesta.Search._parseQueryParams();
-       if(cities.length)
-         Avesta.Search._filter('city', cities[0]);
-       else
+       if(cities.length){
+         Avesta.Search._filter({city:cities[0]});
+         $('.refine-search select[name=city]').val(cities[0]);
+         $('.refine-search select[name=city]').next('.selecttext').text(cities[0]);
+       } else{
          Avesta.renderResults(Avesta.data);
+       }
     },
     simpleSheet: true
   })

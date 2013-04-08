@@ -3,10 +3,11 @@ title: Find an Apartment - Avesta Homes, LLC
 description: This is the Find an Apartment page description
 body_classes: find
 body_id: find
+map_script: https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz82AY4Oulz1gwCoQ&sensor=false
 ---
 
 .hero
-  img src="http://placehold.it/960x475&text=Google Map" alt=""
+  #map-canvas.search-results__map
   .page-name 
     a id="show-refine-search" href="#" Refine your search
 
@@ -58,13 +59,13 @@ body_id: find
             | <% _.each(results, function(result){ %> 
                 <%= Avesta._render('search-result',result)%>
               <% }) %>
-          .pagination
-            | MORE RESULTS
-            .pagination__pages
-              a.current href="#" 1
-              a href="#" 2
-              a href="#" 3
-              a.next href="#"
+          / .pagination
+          /   | MORE RESULTS
+          /   .pagination__pages
+          /     a.current href="#" 1
+          /     a href="#" 2
+          /     a href="#" 3
+          /     a.next href="#"
         script type='text/template' name='search-result'
           .listing.grid
             .photo.grid__col.col-100.large-50

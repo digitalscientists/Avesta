@@ -23,6 +23,8 @@ html
       | <% _.each(cities, function(city){ %>
       option value="<%= city %>" <%= city %>
       | <% }) %>
+    - if data.page.map_script
+      script type='text/javascript' src==data.page.map_script 
   
   body class=data.page.body_classes id=data.page.body_id
     .wrap
