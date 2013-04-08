@@ -206,26 +206,28 @@ $(document).ready(function() {
   });
 
 
-  Tabletop.init({
-    key: 'https://docs.google.com/spreadsheet/pub?key=0AuVlvDns_FoWdFJ3a3NzT2RENy01eHlta2tlcUdVM2c&',
-    callback: function(data, tabletop) {
-       Avesta.Map.initialize();
-       Avesta.data = data;
-       Avesta.prepareData();
-       Avesta.Search.prepareForm();
-       var cities = Avesta.Search._parseQueryParams();
-       if(cities.length){
-         Avesta.Search._filter({city:cities[0]});
-         $('.refine-search select[name=city]').val(cities[0]);
-         $('.refine-search select[name=city]').next('.selecttext').text(cities[0]);
-       } else{
-         Avesta.renderResults(Avesta.data);
-       }
-    },
-    simpleSheet: true
-  })
+  if(document.body.id == 'find'){
+    Tabletop.init({
+      key: 'https://docs.google.com/spreadsheet/pub?key=0AuVlvDns_FoWdFJ3a3NzT2RENy01eHlta2tlcUdVM2c&',
+      callback: function(data, tabletop) {
+         Avesta.Map.initialize();
+         Avesta.data = data;
+         Avesta.prepareData();
+         Avesta.Search.prepareForm();
+         var cities = Avesta.Search._parseQueryParams();
+         if(cities.length){
+           Avesta.Search._filter({city:cities[0]});
+           $('.refine-search select[name=city]').val(cities[0]);
+           $('.refine-search select[name=city]').next('.selecttext').text(cities[0]);
+         } else{
+           Avesta.renderResults(Avesta.data);
+         }
+      },
+      simpleSheet: true
+    });
 
-  Avesta.initialize();
-  Avesta.Search.initialize();
+    Avesta.initialize();
+    Avesta.Search.initialize();
+  }
 
 });
