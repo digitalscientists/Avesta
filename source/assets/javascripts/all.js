@@ -58,7 +58,7 @@ var Avesta = {
     if($('#search-results').length){
       $('#search-results').html(
         this._render('search-results',{
-          city: 'Alph',state: 'FL',results: results
+          city: results[0].city, state: 'FL',results: results
         })
       )
     }
