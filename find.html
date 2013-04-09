@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Find an Apartment - Avesta Homes, LLC</title>
     <meta content="This is the Find an Apartment page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365526723" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365526728" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365547356" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365547355" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz82AY4Oulz1gwCoQ&sensor=false" type="text/javascript"></script>
   </head>
   <body class="find" id="find">
@@ -56,6 +56,11 @@
           <a href="#" id="show-refine-search">Refine your search</a>
         </div>
       </div>
+      <script name="map-info-window" type="text/template">
+        <div class="map-info__name"><%= name %></div>
+        <div><%= numBeds[0] %> - <%= numBeds[numBeds.length - 1] %> Bedroom Apartments</div>
+        <div>$<%= minRent[0] %> - $<%= maxRent[maxRent.length - 1] %> / month</div>
+      </script>
       <div class="content content-bg">
         <div class="main flush" role="main">
           <div class="grid">
