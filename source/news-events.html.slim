@@ -1,8 +1,8 @@
 ---
 title: News & Events - Avesta Homes, LLC
 description: This is the News & Events page description
-body_classes: about
-body_id: about-news-events
+body_classes: 'about'
+body_id: 'about-news-events'
 ---
 
 .hero
@@ -14,22 +14,15 @@ body_id: about-news-events
   == render_partial "nav-sub"
   .main role="main"
     .grid
-      .news.primary.grid__col.col-100.large-75
-        .media
-          .media__body
-            h3.news-title 
-              a href="#" At Vero Eos et Accusamus et Iusto Odio Dignissimos Quis Dolorem
-            p.news-summary Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip, ad valorem est fidelis.
-        .media
-          .media__body
-            h3.news-title 
-              a href="#" At Vero Eos et Accusamus et Iusto Odio Dignissimos Quis Dolorem
-            p.news-summary Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip, ad valorem est fidelis.
-        .media
-          .media__body
-            h3.news-title 
-              a href="#" At Vero Eos et Accusamus et Iusto Odio Dignissimos Quis Dolorem
-            p.news-summary Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip, ad valorem est fidelis.
+      #news.news.primary.grid__col.col-100.large-75
+        script type='text/template' name='news-posts'
+          | <% _.each(posts, function(post){ %> 
+          .media
+            .media__body
+              h3.news-title 
+                a href="<%= post.post_url %>" <%= post.title %>
+              p.news-summary <%= post.body %>
+          | <% }) %>
       
       .events.secondary.grid__col.col-100.large-25
         h2 Events
