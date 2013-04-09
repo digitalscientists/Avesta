@@ -48,7 +48,9 @@ Avesta.Map = {
         pixelOffset: new google.maps.Size(0,-30)
       });
       google.maps.event.addDomListener(marker, 'click', function() {
+        if(self.openInfoWindow) self.openInfoWindow.close();
         place.infoWindow.open(self.map);
+        self.openInfoWindow = place.infoWindow;
       });
       self.markers.push(marker);
       self.bounds.extend(pos);
