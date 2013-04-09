@@ -1,6 +1,7 @@
 .search-results__map{
   width: 960px;
   height: 475px;
+  img{max-width: inherit;}
 }
 .marker {
   display: inline-block;
@@ -17,4 +18,10 @@
   background: url(/assets/images/marker.png) no-repeat 0 0;
   background-size: 100%;
   position: absolute;
+}
+
+.map-info__name{ 
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em;
 }

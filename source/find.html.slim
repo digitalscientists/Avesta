@@ -11,6 +11,11 @@ map_script: https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz
   .page-name 
     a id="show-refine-search" href="#" Refine your search
 
+script type='text/template' name='map-info-window'
+  .map-info__name <%= name %>
+  div <%= numBeds[0] %> - <%= numBeds[numBeds.length - 1] %> Bedroom Apartments
+  div $<%= minRent[0] %> - $<%= maxRent[maxRent.length - 1] %> / month
+
 .content.content-bg
   .main.flush role="main"
     .grid

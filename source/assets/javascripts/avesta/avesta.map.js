@@ -13,7 +13,11 @@ Avesta.Map = {
       this.div = document.createElement('div');
       this.div.className = "marker";
       this.div.innerHTML = this.number;
-      this.getPanes().overlayLayer.appendChild(this.div);
+      this.getPanes().overlayMouseTarget.appendChild(this.div);
+      var self = this;
+      google.maps.event.addDomListener(this.div, 'click', function() {
+        google.maps.event.trigger(self, 'click');
+      });
     };
 
     this.Marker.prototype.draw = function() {
@@ -37,9 +41,18 @@ Avesta.Map = {
       var latlng = place.latlng.split(','),
           pos = new google.maps.LatLng(parseFloat(latlng[0]),parseFloat(latlng[1]));
       var bounds = new google.maps.LatLngBounds(pos,pos);   
-      self.markers.push(new self.Marker(bounds, self.map, ++i));
+      var marker = new self.Marker(bounds, self.map, ++i);
+      place.infoWindow = new google.maps.InfoWindow({
+        content: Avesta._render('map-info-window',place),
+        position: pos,
+        pixelOffset: new google.maps.Size(0,-30)
+      });
+      google.maps.event.addDomListener(marker, 'click', function() {
+        place.infoWindow.open(self.map);
+      });
+      self.markers.push(marker);
       self.bounds.extend(pos);
-    })
+    });
     self.map.fitBounds(self.bounds);
   },
   clearMarkers: function(){
