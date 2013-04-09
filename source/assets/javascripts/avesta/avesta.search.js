@@ -33,7 +33,7 @@ Avesta.Search = {
   _parseQueryParams: function(){
     return _.map(window.location.search.split('&'), function(str){
       var match = str.match(/city=(.*)/);
-      if(match) return match[1];
+      if(match) return match[1].replace('+',' ');
     });
   }
 };
