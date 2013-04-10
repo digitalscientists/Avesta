@@ -13,10 +13,12 @@ body_id: home
   .main role="main"
     .grid
       .grid__col.col-100.large-66
-        .feature
+        .feature#news
           h2.title News and Events
-          h3.headline Community Service Event at USF
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          script type='text/template' name='home-news-and-events'
+            h3.headline
+              a href='news-events.html' <%= post.title %>
+            p <%= post.body %>
       .grid__col.col-100.large-33
         .feature
           h2.title Resources

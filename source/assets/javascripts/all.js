@@ -78,5 +78,9 @@ $(document).ready(function() {
   }
 
   if(document.body.id == 'about-news-events')
-    Avesta.News.initialize();
+    Avesta.News.fetch(Avesta.News.renderResults);
+
+  if(document.body.id == 'home')
+    Avesta.News.fetch(Avesta.News.renderHome);
+
 });

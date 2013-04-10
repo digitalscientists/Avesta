@@ -68,6 +68,8 @@
 
 .feature {
   padding: 20px 18px;
+  overflow: hidden;
+  height: 150px;
   background: $feature-background;
   .title {
     font-family: $font-semibold;
