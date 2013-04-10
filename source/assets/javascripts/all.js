@@ -25,6 +25,7 @@ $(document).ready(function() {
   $menulink = $('.menu-link');
   
   $menulink.click(function() {
+    $('.search').toggleClass('active');
     $menulink.toggleClass('active');
     $menu.toggleClass('active');
     return false;
