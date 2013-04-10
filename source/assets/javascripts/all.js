@@ -47,9 +47,13 @@ $(document).ready(function() {
     });
   });
 
+  $('body').on('click','a[data-action="more-link"]',function(){
+    $(this).prev().addClass('expanded');$(this).remove();
+  })
+
 
   Avesta.initialize();
-  
+
   if(document.body.id == 'find'){
     Tabletop.init({
       key: 'https://docs.google.com/spreadsheet/pub?key=0AuVlvDns_FoWdFJ3a3NzT2RENy01eHlta2tlcUdVM2c&',

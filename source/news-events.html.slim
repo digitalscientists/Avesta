@@ -22,6 +22,7 @@ body_id: 'about-news-events'
               h3.news-title 
                 a href="<%= post.post_url %>" <%= post.title %>
               p.news-summary <%= post.body %>
+            a data-action='more-link' More...
           | <% }) %>
       
       .events.secondary.grid__col.col-100.large-25

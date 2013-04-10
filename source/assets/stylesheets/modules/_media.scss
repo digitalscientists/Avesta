@@ -35,8 +35,8 @@ $gutter-img: 1em;
 
 .media__body {
   overflow: hidden;
+  margin-bottom: 0;
+  height: 12em;
+  &.expanded{ height: auto; }
 }
 
-.media__body {
-  margin-bottom: 0;
-}
