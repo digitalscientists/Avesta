@@ -122,10 +122,10 @@
     }
     @include hoverActiveFocus('text-decoration', none);
     &.fb {
-      background-image: url(/assets/images/icon-fb.jpg);
+      background-image: url(../images/icon-fb.jpg);
     }
     &.in {
-      background-image: url(/assets/images/icon-in.jpg);
+      background-image: url(../images/icon-in.jpg);
     }
   }
   img {
