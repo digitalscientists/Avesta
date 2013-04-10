@@ -1,6 +1,11 @@
+.map-container{
+  position: relative;
+}
 .search-results__map{
-  width: 960px;
-  height: 475px;
+  @include mq($large) {
+    width: 960px;
+    height: 475px;
+  }
   img{max-width: inherit;}
   * {
     &,

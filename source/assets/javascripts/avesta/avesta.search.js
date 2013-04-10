@@ -28,7 +28,12 @@ Avesta.Search = {
     });
 
     Avesta.renderResults(results);
-    Avesta.Map.addMarkers(results);
+    if(document.documentElement.clientWidth > 600)
+      Avesta.Map.addMarkers(results);
+    else
+      $('#map-canvas').html($('<img>',{
+        src: Avesta.Map.staticMap(results,document.documentElement.clientWidth)
+      }));
   },
   _parseQueryParams: function(){
     return _.map(window.location.search.split('&'), function(str){

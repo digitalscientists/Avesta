@@ -7,7 +7,7 @@ map_script: https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz
 ---
 
 .hero
-  div
+  .map-container
     #map-canvas.search-results__map
     .hide-map 
       span.visible Hide Map
@@ -26,7 +26,7 @@ script type='text/template' name='map-info-window'
       .grid__col.col-100.large-215
         .find-refine
           h3 Refine your search
-          form.refine-search action="#"
+          form.refine-search
             fieldset
               .field
                 label for="rent" By Rent

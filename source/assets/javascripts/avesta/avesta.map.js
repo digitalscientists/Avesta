@@ -63,6 +63,14 @@ Avesta.Map = {
       m.setMap(null)
       m = null;
     })
+  },
+  staticMap: function(places,width){
+    var url = 'http://maps.googleapis.com/maps/api/staticmap?size='+width+'x'+width+'&sensor=false&maptype=terrain'
+      , i = 1;
+    _.each(places, function(place){
+      url += '&markers=color:blue%7Clabel:'+ i++ +'%7C' + place.latlng
+    })
+    return url;
   }
 }
 

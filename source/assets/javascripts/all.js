@@ -40,6 +40,11 @@ $(document).ready(function() {
   $('#show-refine-search').click(function() {
     $('.find-refine').show();
   });
+  $('button.btn--cancel').click(function(e){
+    $('.find-refine').hide();
+    e.stopPropagation();
+    return false;
+  })
 
   //select styling for refine search form
   $('.refine-search select').each(function(){
@@ -64,7 +69,8 @@ $(document).ready(function() {
     Tabletop.init({
       key: 'https://docs.google.com/spreadsheet/pub?key=0AuVlvDns_FoWdFJ3a3NzT2RENy01eHlta2tlcUdVM2c&',
       callback: function(data, tabletop) {
-         Avesta.Map.initialize();
+         if(document.documentElement.clientWidth > 600)
+           Avesta.Map.initialize();
          Avesta.data = data;
          Avesta.prepareData();
          Avesta.Search.prepareForm();
