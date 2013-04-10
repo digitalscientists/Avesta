@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Avesta Homes, LLC</title>
     <meta content="This is the home page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365564017" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365550551" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365618336" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365618335" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
   </head>
   <body class="home" id="home">
     <div class="wrap"><header role="banner">
@@ -57,10 +57,14 @@
         <div class="main" role="main">
           <div class="grid">
             <div class="grid__col col-100 large-66">
-              <div class="feature">
+              <div class="feature" id="news">
                 <h2 class="title">News and Events</h2>
-                <h3 class="headline">Community Service Event at USF</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <script name="home-news-and-events" type="text/template">
+                  <h3 class="headline">
+                    <a href="news-events.html"><%= post.title %></a>
+                  </h3>
+                  <p><%= post.body %></p>
+                </script>
               </div>
             </div>
             <div class="grid__col col-100 large-33">
