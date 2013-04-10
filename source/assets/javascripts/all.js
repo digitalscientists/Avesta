@@ -23,7 +23,7 @@ $(document).ready(function() {
   $('.chzn-select').chosen().change(function(e){
     this.form.submit();
   }); 
-  $('.chzn-select-deselect').chosen();
+  $('.chzn-select').val('').trigger("liszt:updated");
 
   //rwd - toggle main nav
   var $menu = $('#nav-main'),
