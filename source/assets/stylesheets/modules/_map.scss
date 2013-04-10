@@ -32,3 +32,17 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+
+.hide-map{
+  position: absolute;
+  right: 14px;
+  bottom: 0;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  span.hidden{ display: none;}
+  &.active{
+    span.hidden{ display: inline;}
+    span.visible{display: none;}
+  }
+}

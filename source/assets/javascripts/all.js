@@ -14,6 +14,11 @@ $(document).ready(function() {
     $('.search').show();
   });
 
+  $('body').on('click','.hide-map',function(){
+    $(this).toggleClass('active');
+    $('#map-canvas').toggle();
+  });
+
   //init jquery chose
   $('.chzn-select').chosen().change(function(e){
     this.form.submit();

@@ -7,7 +7,11 @@ map_script: https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz
 ---
 
 .hero
-  #map-canvas.search-results__map
+  div
+    #map-canvas.search-results__map
+    .hide-map 
+      span.visible Hide Map
+      span.hidden Show Map
   .page-name 
     a id="show-refine-search" href="#" Refine your search
 
