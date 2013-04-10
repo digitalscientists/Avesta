@@ -2,6 +2,13 @@
   width: 960px;
   height: 475px;
   img{max-width: inherit;}
+  * {
+    &,
+    &:before,
+    &:after{
+        @include vendor(box-sizing, content-box);
+    }
+  }
 }
 .marker {
   display: inline-block;
