@@ -109,7 +109,7 @@ form.find-apartment {
   z-index: 100;
   display: none;
   position: fixed;
-  top: 75px;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
@@ -117,6 +117,7 @@ form.find-apartment {
   h3 {
     background: #ededed;
     border-top: 2px solid #ddd;
+    margin-bottom: 0;
   }
   @include mq($large) {
     display: block;
@@ -131,7 +132,7 @@ form.find-apartment {
 }
 
 form.refine-search {
-  padding: 15px;
+  padding: 10px 15px;
   fieldset {
     margin: 0;
     padding: 0;
