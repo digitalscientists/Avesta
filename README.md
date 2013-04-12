@@ -1,7 +1,7 @@
 Avesta
 ======
 
-Avesta Homes, LLC site
+Avesta Homes LLC site
 
 Requirements
 ------------
