@@ -11,7 +11,7 @@
 $(document).ready(function() {
   
   $('body').on('click','#nav-find a',function(){
-    $('.search').show();
+    $('.search').toggle();
   });
 
   $('body').on('click','.hide-map',function(){
