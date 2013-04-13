@@ -1,12 +1,18 @@
 Avesta.Map = {
   initialize: function(){
     var mapOptions = {
+      mapTypeControlOptions: {
+        mapTypeIds: [ 'Styled']
+      },
+      mapTypeId: 'Styled',
       center: new google.maps.LatLng(28.62219,-81.415708),
-      zoom: 8,
-      mapTypeId: google.maps.MapTypeId.TERRAIN
+      zoom: 8
     };
     this.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     this.bounds = new google.maps.LatLngBounds();
+
+    var styledMapType = new google.maps.StyledMapType(this.mapStyles, { name: 'Styled' });
+    this.map.mapTypes.set('Styled', styledMapType);
 
     this.Marker.prototype = new google.maps.OverlayView();
     this.Marker.prototype.onAdd = function() {
@@ -71,7 +77,82 @@ Avesta.Map = {
       url += '&markers=color:blue%7Clabel:'+ i++ +'%7C' + place.latlng
     })
     return url;
-  }
+  },
+  mapStyles: [
+    {
+      featureType: 'road.highway',
+      elementType: 'all',
+      stylers: [
+        { hue: '#F9E453' },
+        { saturation: -7 },
+        { lightness: 3 },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'landscape',
+      elementType: 'all',
+      stylers: [
+        { hue: '#ECECEC' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'poi',
+      elementType: 'all',
+      stylers: [
+        { hue: '#ffffff' },
+        { saturation: -100 },
+        { lightness: 100 },
+        { visibility: 'off' }
+      ]
+    },{
+      featureType: 'road.arterial',
+      elementType: 'all',
+      stylers: [
+        { hue: '#FCFCFC' },
+        { saturation: -100 },
+        { lightness: 95 },
+        { visibility: 'simplified' }
+      ]
+    },{
+      featureType: 'road.local',
+      elementType: 'labels',
+      stylers: [
+        { hue: '#FCFCFC' },
+        { saturation: -100 },
+        { lightness: -1 },
+        { visibility: 'off' }
+      ]
+    },{
+      featureType: 'water',
+      elementType: 'labels',
+      stylers: [
+        { hue: '#B9CBF6' },
+        { saturation: 59 },
+        { lightness: 35 },
+        { visibility: 'off' }
+      ]
+    },{
+      featureType: 'road.local',
+      elementType: 'all',
+      stylers: [
+        { hue: '#ffffff' },
+        { saturation: -100 },
+        { lightness: 100 },
+        { visibility: 'simplified' }
+      ]
+    },{
+      featureType: 'landscape.man_made',
+      elementType: 'geometry',
+      stylers: [
+        { hue: '#ECECEC' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'off' }
+      ]
+    }
+  ]
 }
 
 Avesta.Map.Marker = function(bounds,map,number){
