@@ -34,11 +34,26 @@ Avesta.Search = {
       $('#map-canvas').html($('<img>',{
         src: Avesta.Map.staticMap(results,document.documentElement.clientWidth)
       }));
+
+    this.paginate(results);
   },
   _parseQueryParams: function(){
     return _.map(window.location.search.split('&'), function(str){
       var match = str.match(/city=(.*)/);
       if(match) return match[1].replace('+',' ');
     });
+  },
+  paginate: function(results){
+    if(results.length > 4){
+      $('.pagination').addClass('visible');
+      $('#search-results').pajinate({
+        item_container_id: '.search-results',
+        items_per_page: 5, 
+        nav_panel_id: '.pagination__pages',
+        show_first_last: false
+      })
+    } else {
+      $('.pagination').removeClass('visible');
+    }
   }
 };

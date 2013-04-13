@@ -74,13 +74,13 @@ script type='text/template' name='map-info-window'
             | <% _.each(results, function(result){ result.index = ++index; %> 
                 <%= Avesta._render('search-result',result) %>
               <% }) %>
-          / .pagination
-          /   | MORE RESULTS
-          /   .pagination__pages
-          /     a.current href="#" 1
-          /     a href="#" 2
-          /     a href="#" 3
-          /     a.next href="#"
+          .pagination
+            | MORE RESULTS
+            .pagination__pages
+              a.current href='#1' 1
+              a href="#2" 2
+              a href="#3" 3
+              a.next href="#"
         script type='text/template' name='search-result'
           .listing.grid
             .photo.grid__col.col-100.large-50

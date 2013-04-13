@@ -3,6 +3,7 @@
 //= require lib/underscore-min
 //= require lib/tabletop
 //= require lib/serialize
+//= require lib/jquery.pajinate.min
 //= require avesta/avesta
 //= require avesta/avesta.search
 //= require avesta/avesta.map
@@ -87,7 +88,7 @@ $(document).ready(function() {
     });
 
     Avesta.Search.initialize();
-  }
+  };
 
   if(document.body.id == 'about-news-events')
     Avesta.News.fetch(Avesta.News.renderResults);

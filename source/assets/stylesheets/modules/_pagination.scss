@@ -1,4 +1,6 @@
 .pagination {
+  display: none;
+  &.visible{ display: block; }
   padding: 0 15px;
   border-top: 1px solid #ddd;
   font-family: $font-regular;
@@ -15,7 +17,8 @@
 .pagination__pages > a {
   padding: 0 .5em;
   margin: 0;
-  &.current {
+  &.active_page {
     color: $brand-color;
   }
+  &.no_more{ display: none;}
 }
