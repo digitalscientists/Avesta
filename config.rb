@@ -2,9 +2,12 @@
 ## Layouts
 ###########################
 
+require 'builder'
+
 ## default
 
 page "*", :layout => "_templates/layouts/default"
+page 'sitemap.xml', layout: false
 
 ## Assets
 set :css_dir, 'assets/stylesheets'
