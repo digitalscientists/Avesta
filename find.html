@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Find an Apartment - Avesta Homes LLC</title>
     <meta content="This is the Find an Apartment page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365813734" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365813734" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1365814230" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1365814230" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz82AY4Oulz1gwCoQ&sensor=false" type="text/javascript"></script>
   </head>
   <body class="find" id="find">
@@ -103,9 +103,10 @@
                       Apartments in <%= city %>, <%= state %>
                     <% }else{ %>
                     No Results
-                    <% } %></h1><% index = 0 %><% _.each(results, function(result){ result.index = ++index; %> 
-                    <%= Avesta._render('search-result',result) %>
-                  <% }) %></div>
+                    <% } %></h1><% index = 0 %><div class="listings"><% _.each(results, function(result){ result.index = ++index; %> 
+                      <%= Avesta._render('search-result',result) %>
+                    <% }) %></div>
+                </div>
                 <div class="pagination">MORE RESULTS<div class="pagination__pages">
                     <a class="current" href="#1">1</a><a href="#2">2</a><a href="#3">3</a><a class="next" href="#"></a>
                   </div>
