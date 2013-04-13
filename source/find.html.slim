@@ -71,9 +71,10 @@ script type='text/template' name='map-info-window'
                 No Results
                 <% } %>
             | <% index = 0 %>
-            | <% _.each(results, function(result){ result.index = ++index; %> 
-                <%= Avesta._render('search-result',result) %>
-              <% }) %>
+            .listings
+              | <% _.each(results, function(result){ result.index = ++index; %> 
+                  <%= Avesta._render('search-result',result) %>
+                <% }) %>
           .pagination
             | MORE RESULTS
             .pagination__pages

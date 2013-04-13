@@ -47,7 +47,7 @@ Avesta.Search = {
     if(results.length > 4){
       $('.pagination').addClass('visible');
       $('#search-results').pajinate({
-        item_container_id: '.search-results',
+        item_container_id: '.listings',
         items_per_page: 5, 
         nav_panel_id: '.pagination__pages',
         show_first_last: false
