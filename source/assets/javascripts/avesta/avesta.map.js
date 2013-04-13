@@ -6,7 +6,8 @@ Avesta.Map = {
       },
       mapTypeId: 'Styled',
       center: new google.maps.LatLng(28.62219,-81.415708),
-      zoom: 8
+      zoom: 8,
+      mapTypeControl: false
     };
     this.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     this.bounds = new google.maps.LatLngBounds();

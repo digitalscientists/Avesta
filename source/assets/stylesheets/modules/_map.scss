@@ -46,6 +46,7 @@
   padding: 6px 10px;
   background: rgba(0,0,0,0.2);
   color: white;
+  cursor: pointer;
   span.hidden{ display: none;}
   &.active{
     span.hidden{ display: inline;}
