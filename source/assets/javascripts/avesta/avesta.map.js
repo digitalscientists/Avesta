@@ -91,6 +91,20 @@ Avesta.Map = {
       ]
     },{
       featureType: 'road.highway',
+      elementType: 'labels.text.fill',
+      stylers: [
+        { color: '#191919' },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.highway',
+      elementType: 'labels.text.stroke',
+      stylers: [
+        { color: '#FFF' },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.highway',
       elementType: 'labels',
       stylers: [
         { hue: '#191919' },
@@ -138,22 +152,22 @@ Avesta.Map = {
         { hue: '#FCFCFC' },
         { saturation: -100 },
         { lightness: 95 },
-        { visibility: 'simplified' }
+        { visibility: 'on' }
       ]
     },{
       featureType: 'road.arterial',
       elementType: 'labels.text.fill',
       stylers: [
-        { hue: '#E3E3E3' },
+        { hue: '#AAA' },
         { saturation: -100 },
         { lightness: 32 },
-        { visibility: 'simplified' }
+        { visibility: 'on' }
       ]
     },{
       featureType: 'road.arterial',
       elementType: 'labels.text.stroke',
       stylers: [
-        { hue: '#FFFFFF' },
+        { hue: '#AAA' },
         { saturation: -100 },
         { lightness: 32 },
         { visibility: 'on' }
@@ -180,7 +194,7 @@ Avesta.Map = {
       featureType: 'road.local',
       elementType: 'labels',
       stylers: [
-        { visibility: 'off' }
+        { visibility: 'on' }
       ]
     },{
       featureType: 'road.local',
@@ -190,6 +204,20 @@ Avesta.Map = {
         { saturation: -100 },
         { lightness: 100 },
         { visibility: 'simplified' }
+      ]
+    },{
+      featureType: 'road.local',
+      elementType: 'geometry.stroke',
+      stylers: [
+        { color: '#FAFAFA' },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.local',
+      elementType: 'labels.text.fill',
+      stylers: [
+        { color: '#CCCCCC' },
+        { visibility: 'on' }
       ]
     },{
       featureType: 'water',
@@ -204,6 +232,18 @@ Avesta.Map = {
         { hue: '#ECECEC' },
         { saturation: -100 },
         { lightness: 32 },
+        { visibility: 'off' }
+      ]
+    },{
+      featureType: 'administrative.land_parcel',
+      elementType: 'geometry.stroke',
+      stylers: [
+        { visibility: 'off' }
+      ]
+    },{
+      featureType: 'landscape.man_made',
+      elementType: 'geometry.stroke',
+      stylers: [
         { visibility: 'off' }
       ]
     }
