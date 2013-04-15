@@ -90,6 +90,30 @@ Avesta.Map = {
         { visibility: 'on' }
       ]
     },{
+      featureType: 'road.highway',
+      elementType: 'labels',
+      stylers: [
+        { hue: '#191919' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.highway.controlled_access',
+      elementType: 'labels.icon',
+      stylers: [
+        { hue: '#AAA' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.highway',
+      elementType: 'geometry.stroke',
+      stylers: [
+        { visibility: 'off' }
+      ]
+    },{
       featureType: 'landscape',
       elementType: 'all',
       stylers: [
@@ -102,10 +126,10 @@ Avesta.Map = {
       featureType: 'poi',
       elementType: 'all',
       stylers: [
-        { hue: '#ffffff' },
+        { hue: '#E2E2E2' },
         { saturation: -100 },
         { lightness: 100 },
-        { visibility: 'off' }
+        { visibility: 'simplified' }
       ]
     },{
       featureType: 'road.arterial',
@@ -117,31 +141,61 @@ Avesta.Map = {
         { visibility: 'simplified' }
       ]
     },{
+      featureType: 'road.arterial',
+      elementType: 'labels.text.fill',
+      stylers: [
+        { hue: '#E3E3E3' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'simplified' }
+      ]
+    },{
+      featureType: 'road.arterial',
+      elementType: 'labels.text.stroke',
+      stylers: [
+        { hue: '#FFFFFF' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.arterial',
+      elementType: 'geometry.stroke',
+      stylers: [
+        { hue: '#F4E2B7' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'on' }
+      ]
+    },{
+      featureType: 'road.arterial',
+      elementType: 'geometry.fill',
+      stylers: [
+        { hue: '#FFF' },
+        { saturation: -100 },
+        { lightness: 32 },
+        { visibility: 'on' }
+      ]
+    },{
       featureType: 'road.local',
       elementType: 'labels',
       stylers: [
-        { hue: '#FCFCFC' },
-        { saturation: -100 },
-        { lightness: -1 },
-        { visibility: 'off' }
-      ]
-    },{
-      featureType: 'water',
-      elementType: 'labels',
-      stylers: [
-        { hue: '#B9CBF6' },
-        { saturation: 59 },
-        { lightness: 35 },
         { visibility: 'off' }
       ]
     },{
       featureType: 'road.local',
       elementType: 'all',
       stylers: [
-        { hue: '#ffffff' },
+        { hue: '#DCDCDC' },
         { saturation: -100 },
         { lightness: 100 },
         { visibility: 'simplified' }
+      ]
+    },{
+      featureType: 'water',
+      elementType: 'labels',
+      stylers: [
+        { visibility: 'off' }
       ]
     },{
       featureType: 'landscape.man_made',
