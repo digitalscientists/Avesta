@@ -80,6 +80,7 @@
   .headline {
     font-family: $font-regular;
     @include font-size(23);
+    line-height: 1.2;
     color: $gray-darkest;
   }
   @include mq($large) {  
