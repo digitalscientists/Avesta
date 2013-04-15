@@ -92,7 +92,7 @@
 .tagline {
   float: left;
   font-family: $font-regular;
-  @include font-size(16);
+  @include font-size(14);
   color: $gray-light;
   @include mq($large) {
     @include font-size(21);
@@ -101,7 +101,7 @@
 
 .copy {
   font-family: $font-light;
-  @include font-size(11);
+  @include font-size(8);
   line-height: 2;
   color: #b9b9b9;
   @include mq($large) {
