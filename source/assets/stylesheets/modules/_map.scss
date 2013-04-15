@@ -51,5 +51,17 @@
   &.active{
     span.hidden{ display: inline;}
     span.visible{display: none;}
+    &:after{
+      @include transform(rotate(180deg));
+    }
+  }
+  &:after{
+    content: '';
+    background: url(../images/ico-caret-up.svg);
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
