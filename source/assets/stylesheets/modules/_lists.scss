@@ -76,3 +76,7 @@
     font-family: $font-light;
   }
 }
+// remove bottom padding from grid cols on communities page
+#about-communities .col-100 {
+  padding-bottom: 0;
+}
