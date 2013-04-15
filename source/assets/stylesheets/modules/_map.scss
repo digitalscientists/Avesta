@@ -23,6 +23,8 @@
   height: 27px;
   font-family: $font-regular;
   @include font-size(12);
+  font-weight: normal;
+  letter-spacing: 0;
   line-height: 1.6;
   color: #fff;
   text-align: center;
