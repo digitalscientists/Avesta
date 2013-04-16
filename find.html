@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1,user-scalable=yes" name="viewport" />
     <title>Find an Apartment - Avesta Homes LLC</title>
     <meta content="This is the Find an Apartment page description" name="description" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1366067921" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1366067131" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="assets/stylesheets/all.css?1366127540" media="screen" rel="stylesheet" type="text/css" /><script src="assets/javascripts/all.js?1366127539" type="text/javascript"></script><script name="city-options" type="text/template"><% _.each(cities, function(city){ %><option value="<%= city %>"><%= city %></option><% }) %></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZEWdPuim-OoXRnOz82AY4Oulz1gwCoQ&sensor=false" type="text/javascript"></script>
     <script type="text/javascript">var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-37683459-1']);
@@ -37,7 +37,7 @@
     <div class="wrap"><header role="banner">
         <a class="logo" href="/"><img alt="Avesta" src="assets/images/logo.jpg" /></a><a class="menu-link" href="#menu">Menu</a><div class="search">
           <form action="find.html" class="find-apartment">
-            <label>Find an Apartment</label><select class="chzn-select" data-placeholder="Search by City, State" id="find-mobile" multiple="multiple" name="city" style="width: 300px;"><optgroup label="Florida"><option>Bradenton</option><option>Clearwater</option><option>Eustis</option><option>Jacksonville</option><option>Lakeland</option><option>Largo</option><option>Mount Dora</option><option>New Port Richey</option><option>Orlando</option><option>Pinellas Park</option><option>Saint Petersburg</option><option>Sarasota</option><option>Tampa</option><option>Winter Haven</option></optgroup></select><select class="chzn-select" data-placeholder="Search by City, State" id="find-large" multiple="multiple" name="city" style="width: 510px;"><optgroup label="Florida"><option>Bradenton</option><option>Clearwater</option><option>Eustis</option><option>Jacksonville</option><option>Lakeland</option><option>Largo</option><option>Mount Dora</option><option>New Port Richey</option><option>Orlando</option><option>Pinellas Park</option><option>Saint Petersburg</option><option>Sarasota</option><option>Tampa</option><option>Winter Haven</option></optgroup></select><button type="submit">Search</button>
+            <label>Find an Apartment</label><select class="chzn-select" data-placeholder="Search by City, State" id="find-mobile" multiple="multiple" name="city" style="width: 300px;"><optgroup label="Florida"><option>Bradenton</option><option>Clearwater</option><option>Eustis</option><option>Jacksonville</option><option>Lakeland</option><option>Largo</option><option>Mount Dora</option><option>New Port Richey</option><option>Orlando</option><option>Pinellas Park</option><option>Saint Petersburg</option><option value="Saint Petersburg">St. Petersburg</option><option>Sarasota</option><option>Tampa</option><option>Winter Haven</option></optgroup></select><select class="chzn-select" data-placeholder="Search by City, State" id="find-large" multiple="multiple" name="city" style="width: 510px;"><optgroup label="Florida"><option>Bradenton</option><option>Clearwater</option><option>Eustis</option><option>Jacksonville</option><option>Lakeland</option><option>Largo</option><option>Mount Dora</option><option>New Port Richey</option><option>Orlando</option><option>Pinellas Park</option><option>Saint Petersburg</option><option value="Saint Petersburg">St. Petersburg</option><option>Sarasota</option><option>Tampa</option><option>Winter Haven</option></optgroup></select><button type="submit">Search</button>
           </form>
         </div><ul class="nav" id="nav-main">
           <li id="nav-find">
@@ -82,9 +82,7 @@
             <span class="visible">Hide Map</span><span class="hidden">Show Map</span>
           </div>
         </div>
-        <div class="page-name">
-          <a href="#" id="show-refine-search">Refine your search</a>
-        </div>
+        <div class="page-name"></div>
       </div>
       <script name="map-info-window" type="text/template">
         <div class="map-info__name"><%= name %></div>
@@ -114,9 +112,6 @@
                     <div class="field">
                       <label for="state">State</label><select name="state"><option value="FL">FL</option></select>
                     </div>
-                    <div class="field">
-                      <button class="btn--cancel">Back</button>
-                    </div>
                   </fieldset>
                 </form>
               </div>
@@ -140,11 +135,11 @@
               <script name="search-result" type="text/template">
                 <div class="listing grid">
                   <div class="photo grid__col col-100 large-50">
-                    <a href="<%= url %>"><img alt="Community Photo" src="<%= weblinks || 'http://placehold.it/342x256&text=No%20Image%20Available' %>" /></a><a href="<%= url %>">View Community</a>
+                    <a href="<%= url %>" target="_blank"><img alt="Community Photo" src="<%= weblinks || 'http://placehold.it/342x256&text=No%20Image%20Available' %>" /></a><a href="<%= url %>" target="_blank">View Community</a>
                   </div>
                   <div class="details grid__col col-100 large-50">
                     <h2 class="name">
-                      <a href="<%= url %>"><%= name %></a>
+                      <a href="<%= url %>" target="_blank"><%= name %></a>
                       <div class="marker"><%= index %></div>
                     </h2>
                     <p class="contact"><%= street %>, <%= city %>, <%= state %><br/><%= phone %></p>
