@@ -43,9 +43,9 @@
 .hide-map{
   position: absolute;
   right: 1px;
-  bottom: 22px;
-  padding: 6px 10px;
-  background: rgba(0,0,0,0.2);
+  bottom: 0px;
+  padding: 5px 10px;
+  background: rgba(102,102,102,0.8);
   color: white;
   cursor: pointer;
   span.hidden{ display: none;}
