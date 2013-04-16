@@ -14,6 +14,9 @@ $gutter-img: 1em;
 .media {
   display:block;
   @include cf;
+  a[data-action]{
+    cursor: pointer;
+  }
 }
 
 .media__img{
@@ -36,7 +39,7 @@ $gutter-img: 1em;
 .media__body {
   overflow: hidden;
   margin-bottom: 0;
-  height: 12em;
+  height: 12.3em;
   &.expanded{ height: auto; }
 }
 
