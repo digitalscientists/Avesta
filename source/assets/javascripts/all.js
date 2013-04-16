@@ -40,6 +40,7 @@ $(document).ready(function() {
   //show refine search on mobile
   $('#show-refine-search').click(function() {
     $('.find-refine').show();
+    $(this).hide();
   });
   $('button.btn--cancel').click(function(e){
     $('.find-refine').hide();
