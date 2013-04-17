@@ -73,7 +73,7 @@
 .feature {
   padding: 20px 18px;
   overflow: hidden;
-  height: 8.2em;
+  height: 8.294em;
   background: $feature-background;
   .title {
     font-family: $font-semibold;
@@ -88,7 +88,7 @@
     color: $gray-darkest;
   }
   @include mq($large) {  
-    height: 8.2em;
+    height: 8.295em;
   }
 }
 
