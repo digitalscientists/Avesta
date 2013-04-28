@@ -141,7 +141,9 @@ h2,.beta {
   &.border {
     padding-bottom: .35em;
     border-bottom: 1px solid #ddd;
+    @include font-size(24);
     letter-spacing: -.05em;
+    white-space: nowrap;
   }
 }
 h3,.gamma {
