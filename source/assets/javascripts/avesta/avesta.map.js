@@ -63,6 +63,9 @@ Avesta.Map = {
       self.bounds.extend(pos);
     });
     self.map.fitBounds(self.bounds);
+    google.maps.event.addListenerOnce(self.map, 'idle', function(){
+      if(self.map.getZoom() > 16) self.map.setZoom(16);
+    });
   },
   clearMarkers: function(){
     this.bounds = new google.maps.LatLngBounds();
