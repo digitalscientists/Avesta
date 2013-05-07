@@ -32,7 +32,7 @@ form.find-apartment {
     display: none;
     float: left;
     margin-right: 20px;
-    @include font-size(25);
+    @include font-size(24);
     line-height: 35px;
     color: $gray-dark;
   }
@@ -86,6 +86,7 @@ form.find-apartment {
   @include mq($large) {
     label {
       display: inline-block;
+      font-family: $font-regular;
     }
     button {
       @include font-size(18);

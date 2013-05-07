@@ -150,6 +150,9 @@
 // Leadership blocks
 
 .leadership {
+  h2{
+    @include font-size(17);
+  }
   h2 span {
     margin-left: .75em;
     @include font-size(17);
