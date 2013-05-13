@@ -1,5 +1,6 @@
 //= require lib/jquery-1.8.3.min
 //= require lib/chosen.jquery.min
+//= require lib/jquery.flexslider-min
 //= require lib/underscore-min
 //= require lib/tabletop
 //= require lib/serialize
@@ -64,6 +65,16 @@ $(document).ready(function() {
     $(this).prev().addClass('expanded');$(this).remove();
   })
 
+  // home page slider
+  if(document.body.id == 'home'){
+    $('.flexslider').flexslider({
+        animation: "slide",
+        directionNav: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+  }
 
   Avesta.initialize();
 
