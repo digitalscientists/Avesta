@@ -46,14 +46,14 @@ Avesta.Search = {
   paginate: function(results){
     if(results.length > 4){
       $('.pagination').addClass('visible');
+      $('body').on('click','.pagination a', function(){
+        window.scrollTo(0,556);
+      });
       $('#search-results').pajinate({
         item_container_id: '.listings',
         items_per_page: 4, 
         nav_panel_id: '.pagination__pages',
-        show_first_last: false,
-        onPageDisplayed: function(){
-          window.scrollTo(0,556);
-        }
+        show_first_last: false
       })
     } else {
       $('.pagination').removeClass('visible');
