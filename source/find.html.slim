@@ -63,7 +63,9 @@ script type='text/template' name='map-info-window'
         script type='text/template' name='search-results'
           .search-results
             h1.beta 
-              | <% if(results.length){ %>
+              | <% if(!window.location.search.match('city=')){ %>
+                  Avesta Communities
+                <% }else if(results.length){ %>
                   Apartments in <%= city %>, <%= state %>
                 <% }else{ %>
                 No Results

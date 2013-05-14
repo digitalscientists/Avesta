@@ -87,14 +87,10 @@ $(document).ready(function() {
          Avesta.data = data;
          Avesta.prepareData();
          Avesta.Search.prepareForm();
-         var cities = Avesta.Search._parseQueryParams();
-         if(cities.length){
-           Avesta.Search._filter({city:cities[0]});
-           $('.refine-search select[name=city]').val(cities[0]);
-           $('.refine-search select[name=city]').next('.selecttext').text(cities[0]);
-         } else{
-           Avesta.renderResults(Avesta.data);
-         }
+         var cities = _.compact(Avesta.Search._parseQueryParams());
+         Avesta.Search._filter({city:cities[0]});
+         $('.refine-search select[name=city]').val(cities[0]);
+         $('.refine-search select[name=city]').next('.selecttext').text(cities[0]);
       },
       simpleSheet: true
     });
